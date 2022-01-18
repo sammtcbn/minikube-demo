@@ -6,5 +6,4 @@ function failed()
 }
 
 minikube start --driver=docker
-
-minikube dashboard --url
+minikube status
