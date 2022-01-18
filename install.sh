@@ -1,4 +1,10 @@
 #!/bin/bash
+function failed()
+{
+    echo "$*" >&2
+    exit 1
+}
+
 sudo apt -y update
 
 sudo apt -y install curl
@@ -11,7 +17,7 @@ minikube version
 #echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list
 #sudo apt -y update
 #sudo apt -y install kubectl kubeadm
-sudo snap install kubectl
+sudo snap install kubectl --classic
 
 sudo apt -y install docker.io
 sudo systemctl start docker
