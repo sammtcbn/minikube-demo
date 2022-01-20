@@ -9,4 +9,4 @@ clusterip=$(minikube ip)
 echo cluster ip is ${clusterip}
 
 serviceurl=$(minikube service echoserver --url)
-curl $(serviceurl)
+curl ${serviceurl}
