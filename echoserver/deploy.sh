@@ -5,6 +5,8 @@ kubectl wait deploy/echoserver --for condition=available --timeout=600s
 
 kubectl expose deployment echoserver --type=NodePort --port=8080
 
-myip=$(minikube ip)
+clusterip=$(minikube ip)
+echo cluster ip is ${clusterip}
 
-echo ip is ${myip}
+serviceurl=$(minikube service echoserver --url)
+curl $(serviceurl)
