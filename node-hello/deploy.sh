@@ -3,7 +3,7 @@ kubectl create deployment node-hello --image=gcr.io/google_samples/node-hello:1.
 
 kubectl wait deploy/node-hello --for condition=available --timeout=600s
 
-kubectl expose deployment node-hello --type=NodePort --port=8081
+kubectl expose deployment node-hello --type=NodePort --port=8080
 
 clusterip=$(minikube ip)
 echo cluster ip is ${clusterip}
